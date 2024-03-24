@@ -2,10 +2,8 @@
 
 import random
 
-#TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
-#Delete this line: word_list = ["ardvark", "baboon", "camel"]
-word_list = []
 
+from hangman_words import word_list
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 
@@ -15,7 +13,8 @@ lives = 6
 
 #Testing code
 # print(f'Pssst, the solution is {chosen_word}.')
-
+from hangman_art import logo
+print(logo)
 #Create blanks
 display = []
 for _ in range(word_length):
@@ -52,5 +51,8 @@ while not end_of_game:
     if "_" not in display:
         end_of_game = True
         print("You win.")
+
+    from hangman_art import stages
+    print(stages[lives])
 
    
